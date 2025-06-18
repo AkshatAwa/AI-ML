@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 st.title("Welcome to the demo!")
-st.write("👈 Select a bot from the sidebar to interact with it.")
+st.write(" Select a bot from the sidebar to interact with it.")
 
 st.markdown(
     """
