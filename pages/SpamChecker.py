@@ -1,14 +1,11 @@
 import streamlit as st
 import pickle
 
-# Load model and vectorizer
 model = pickle.load(open("spam_model.pkl", "rb"))
 vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
 
-# Page Config
 st.set_page_config(page_title="Email Spam Classifier", page_icon="📬", layout="centered")
 
-# ---------- CUSTOM STYLING ----------
 st.markdown("""
     <style>
         .main-title {
@@ -39,7 +36,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ---------- SIDEBAR ----------
 with st.sidebar:
     st.title(" Project Info")
     st.markdown("""
@@ -53,8 +49,6 @@ with st.sidebar:
      Pro Tip:
     _If you have to pay for the internship, it's likely to be a scam._
     """)
-
-# ---------- MAIN CONTENT ----------
 st.markdown('<div class="main-title">Email Spam Classifier</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-text">Check whether an email is safe or spam using ML.</div>', unsafe_allow_html=True)
 
@@ -76,5 +70,4 @@ if st.button(" Analyze"):
             st.error("🚫 This email is **Spam**. Be cautious!")
             st.markdown("> 💡 _If you have to pay for the internship, it's likely to be a scam._")
 
-# Footer
 st.markdown('<div class="footer">Made with ❤️ by Akshat Awasthi | Bennett University</div>', unsafe_allow_html=True)
